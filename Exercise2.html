@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Exercise2</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<script type="text/javascript">
+			function makeProduct(id, name, image, price, discountedPrice) {
+				return {
+					id: id,
+					name: name,
+					image: image,
+					price: price,
+					discountedPrice: discountedPrice
+				}
+			}
+
+			function printProductName(arr) {
+				for (var i = 0; i <arr.length; i++) {
+					console.log(arr[i].name);
+				}
+			}
+
+			function deleteProductById(arr, key) {
+				for (var i = 0; i < arr.length; i++) {
+					if (arr[i].id == key) {
+						arr.splice(i, 1);
+						break;
+					}
+				}
+			}
+
+			let pro1 = makeProduct('1', 'Apple', 'img1', 500, 450);
+			let pro2 = makeProduct('2', 'Samsung', 'img2', 450, 400);
+			let pro3 = makeProduct('3', 'Sony', 'img3', 400, 350);
+			let pro4 = makeProduct('4', 'LG', 'img4', 350, 300);
+			let pro5 = makeProduct('5', 'Huawei', 'img5', 300, 250);
+
+			var products = [pro1, pro2, pro3, pro4, pro5];
+
+			console.log('---------Before---------');
+			printProductName(products);
+
+			deleteProductById(products, '3');
+
+			console.log('---------After---------');
+			printProductName(products);
+		</script>
+	</body>
+</html>
